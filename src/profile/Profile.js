@@ -1,16 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
-const Profile = ({fullName, bio, profession, handleName }) =>{
+ 
+const Profile = (props) =>{
+  const { fullName, bio, profession } = props; 
+     
+   const handleName = () => {
+         
+       alert(`Bonjour,`);   
+       }; 
   return (
     <div>
-      <span className='premier'>fullname     :{fullName}</span><br/>
-      <span className='deuxieme'>bio         :{bio}</span><br/>
-      <span className='troisieme'>profession :{profession}.</span><br/>
-      <button onClick={( handleName)}> cliquer ici</button>
-    </div>
+      <span className='premier'>{fullName}</span><br/>
+      <span className='deuxieme'> {bio}</span><br/>
+      <span className='troisieme'>{profession}.</span><br/>
+      <button onClick={() => handleName()}>Cliquez ici pour saluer</button>
+    </div> 
   );
-}
+} 
 
 Profile.propTypes = {
   fullName: PropTypes.shape({
@@ -26,4 +32,4 @@ Profile.propTypes = {
     profession: PropTypes.string
   }),
 }
-export default Profile;
+export default Profile;  
